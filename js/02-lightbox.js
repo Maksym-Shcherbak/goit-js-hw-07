@@ -4,18 +4,14 @@ import { galleryItems } from "./gallery-items.js";
 console.log(galleryItems);
 
 const gallery = document.querySelector(".gallery");
-let modal;
 addImageToGallery();
-const lightbox = new SimpleLightbox(".gallery a", {
-  /* options */
+const lightbox = new SimpleLightbox(".gallery__link", {
+  captionsData: "alt",
+  captionPosition: "bottom",
+  captionDelay: 250,
+  showCounter: false,
 });
-
-// onShowOriginalImage();
-
-// function onShowOriginalImage() {
-//   gallery.addEventListener("click", createModalWithImage);
-// }
-
+` `;
 function createImages(images) {
   return images
     .map(
