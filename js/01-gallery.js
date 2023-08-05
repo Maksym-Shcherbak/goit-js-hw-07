@@ -44,9 +44,11 @@ function createModalWithImage(e) {
   modal = basicLightbox.create(
     `
 		<img width="1400" height="900" src="${replaceUrl(e)}">
-	`
+	`,
+    { onClose: (modal) => document.body.classList.remove("scroll-hidden") }
   );
   modal.show();
+  document.body.classList.add("scroll-hidden");
   onCloseModal();
 }
 
