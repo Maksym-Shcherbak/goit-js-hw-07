@@ -23,6 +23,7 @@ function createImages(images) {
                     src="${image.preview}"
                     data-source="${image.original}"
                     alt="${image.description}"
+                    loading ="lazy"
                 />
             </a>
         </li>`
@@ -50,9 +51,7 @@ function createModalWithImage(e) {
 }
 
 function replaceUrl(img) {
-  const originalUrl = img.target.dataset.source;
-  img.target.src = originalUrl;
-  return originalUrl;
+  return img.target.dataset.source;
 }
 
 function onCloseModal() {
