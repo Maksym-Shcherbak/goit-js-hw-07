@@ -57,11 +57,13 @@ function replaceUrl(img) {
 }
 
 function onCloseModal() {
-  window.addEventListener("keydown", CheckPresslEsc);
+  window.addEventListener("keydown", checkPressEsc);
 }
 
-function CheckPresslEsc(e) {
+function checkPressEsc(e) {
+  console.log(e.code);
   if (e.code === "Escape") {
     modal.close();
+    window.removeEventListener("keydown", checkPressEsc);
   }
 }
